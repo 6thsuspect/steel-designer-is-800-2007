@@ -12,52 +12,15 @@ sections (welded I, double angles, RHS/SHS/CHS).
 
 ## Application scope — 24 modules (PRD)
 
-<table>
-  <thead>
-    <tr>
-      <th>Grp</th>
-      <th>Modules</th>
-      <th>Status</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><strong>A. Project &amp; Design Setup</strong></td>
-      <td>1. Design Basis &amp; General (project data, IS 875 load combos, Table 1 material library, partial safety factors, section classification)</td>
-      <td>✅ Phase 1</td>
-    </tr>
-    <tr>
-      <td><strong>B. Member Design</strong></td>
-      <td>2. Tension<br>3. Compression (incl. lacing &amp; battening)<br>4. Flexure<br>5. Combined Axial + Bending</td>
-      <td>✅ Phase 1–2</td>
-    </tr>
-    <tr>
-      <td><strong>B. Member Design</strong></td>
-      <td>23. Special Members</td>
-      <td>🔜 Phase 4</td>
-    </tr>
-    <tr>
-      <td><strong>C. Connection Design</strong></td>
-      <td>6. Bolted Connections (bearing + HSFG, prying, bolt groups)<br>7. Welded Connections (fillet/butt, combined stresses, eccentric groups)</td>
-      <td>✅ Phase 1</td>
-    </tr>
-    <tr>
-      <td><strong>D. Component &amp; System Design</strong></td>
-      <td>8. Plate Elements<br>9. Built-Up<br>10. Base Plates<br>11. Gusset Plates<br>12. Beam-to-Column<br>13. Stiffeners<br>14. Plate Girders<br>15. Splices<br>16. Purlins<br>17. Trusses<br>18. Crane Girders</td>
-      <td>🔜 Phases 2–4</td>
-    </tr>
-    <tr>
-      <td><strong>E. Specialized &amp; Reporting</strong></td>
-      <td>21. Serviceability (deflection)<br>24. Design Report (clause-wise, PDF/DOCX)</td>
-      <td>✅ Phase 1</td>
-    </tr>
-    <tr>
-      <td><strong>E. Specialized &amp; Reporting</strong></td>
-      <td>19. Fatigue<br>20. Seismic<br>22. Durability</td>
-      <td>🔜 Phases 3–4</td>
-    </tr>
-  </tbody>
-</table>
+| Grp | Modules | Status |
+|-----|---------|--------|
+| **A. Project & Design Setup** | 1. Design Basis & General (project data, IS 875 load combos, Table 1 material library, partial safety factors, section classification) | ✅ Phase 1 |
+| **B. Member Design** | 2. Tension<br>3. Compression (incl. lacing & battening)<br>4. Flexure<br>5. Combined Axial + Bending | ✅ Phase 1–2 |
+| **B. Member Design** | 23. Special Members | 🔜 Phase 4 |
+| **C. Connection Design** | 6. Bolted Connections (bearing + HSFG, prying, bolt groups)<br>7. Welded Connections (fillet/butt, combined stresses, eccentric groups) | ✅ Phase 1 |
+| **D. Component & System Design** | 8. Plate Elements<br>9. Built-Up<br>10. Base Plates<br>11. Gusset Plates<br>12. Beam-to-Column<br>13. Stiffeners<br>14. Plate Girders<br>15. Splices<br>16. Purlins<br>17. Trusses<br>18. Crane Girders | 🔜 Phases 2–4 |
+| **E. Specialized & Reporting** | 21. Serviceability (deflection)<br>24. Design Report (clause-wise, PDF/DOCX) | ✅ Phase 1 |
+| **E. Specialized & Reporting** | 19. Fatigue<br>20. Seismic<br>22. Durability | 🔜 Phases 3–4 |
 
 Modules marked `P2–P4` in the sidebar show their PRD roadmap status (honest Phase roadmap per PRD §7) and reuse the
 shared engine, classification and reporting infrastructure when implemented.
