@@ -1,0 +1,39 @@
+{
+  "name": "steel-designer-is800",
+  "productName": "Steel Designer IS800",
+  "version": "1.1.0",
+  "description": "Cross-platform desktop application for steel design as per IS 800:2007 — React + TypeScript + Electron + Tailwind CSS + Vite, with SVG-based visualization.",
+  "author": "ARVIND SINGH RAWAT",
+  "private": true,
+  "main": "dist-electron/main.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -p tsconfig.json --noEmit && vite build && tsc -p tsconfig.electron.json",
+    "build:web": "tsc -p tsconfig.json --noEmit && vite build",
+    "build:electron": "tsc -p tsconfig.electron.json",
+    "electron": "npm run build:electron && electron .",
+    "start": "npm run build && electron .",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "docx": "^9.0.2",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@testing-library/react": "^16.3.3",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "@vitejs/plugin-react": "^4.3.4",
+    "autoprefixer": "^10.4.20",
+    "electron": "^31.7.6",
+    "jsdom": "^30.1.1",
+    "postcss": "^8.4.49",
+    "tailwindcss": "^3.4.15",
+    "typescript": "^5.6.3",
+    "vite": "^5.4.11",
+    "vitest": "^2.1.8"
+  }
+}
