@@ -1,4 +1,4 @@
-# Steel Designer IS800
+# Steel Designer IS:800-2007
 
 Web application for structural steel design as per **IS 800:2007 (Limit State Design)**, covering
 member design (tension / compression / flexure / combined forces), bolted and welded connections, serviceability checks,
