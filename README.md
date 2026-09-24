@@ -1,6 +1,6 @@
 # Steel Designer IS800
 
-Cross-platform desktop application for structural steel design as per **IS 800:2007 (Limit State Design)**, covering
+Web application for structural steel design as per **IS 800:2007 (Limit State Design)**, covering
 member design (tension / compression / flexure / combined forces), bolted and welded connections, serviceability checks,
 and clause-wise professional design reports with SVG-based cross-section visualization.
 
