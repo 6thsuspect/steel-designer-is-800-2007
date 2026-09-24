@@ -13,7 +13,7 @@ sections (welded I, double angles, RHS/SHS/CHS).
 ## Application scope — 24 modules (PRD)
 
 | Grp | Modules | Status |
-|---|---|---|
+|----|----|----|
 | **A. Project & Design Setup** | 1. Design Basis & General (project data, IS 875 load combos, Table 1 material library, partial safety factors, section classification) | ✅ Phase 1   |
 | **B. Member Design** | 2. Tension · 3. Compression (incl. lacing & battening) · 4. Flexure · 5. Combined Axial + Bending | ✅ Phase 1–2 |
 | | 23. Special Members | 🔜 Phase 4   |
