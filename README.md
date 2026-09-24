@@ -13,14 +13,14 @@ sections (welded I, double angles, RHS/SHS/CHS).
 ## Application scope — 24 modules (PRD)
 
 | Grp | Modules | Status |
-|----|----|----|
-| **A. Project & Design Setup** | 1. Design Basis & General (project data, IS 875 load combos, Table 1 material library, partial safety factors, section classification) | ✅ Phase 1   |
+|-----|---------|--------|
+| **A. Project & Design Setup** | 1. Design Basis & General (project data, IS 875 load combos, Table 1 material library, partial safety factors, section classification) | ✅ Phase 1 |
 | **B. Member Design** | 2. Tension · 3. Compression (incl. lacing & battening) · 4. Flexure · 5. Combined Axial + Bending | ✅ Phase 1–2 |
-| | 23. Special Members | 🔜 Phase 4   |
-| **C. Connection Design** | 6. Bolted Connections (bearing + HSFG, prying, bolt groups) · 7. Welded Connections (fillet/butt, combined stresses, eccentric groups) | ✅ Phase 1   |
-| **D. Component & System Design** | 8. Plate Elements · 9. Built-Up · 10. Base Plates · 11. Gusset Plates · 12. Beam-to-Column · 13. Stiffeners · 14. Plate Girders · 15. Splices · 16. Purlins · 17. Trusses · 18. Crane Girders | 🔜 Phases 2–4   |
-| **E. Specialized & Reporting** | 21. Serviceability (deflection) · 24. Design Report (clause-wise, PDF/DOCX) | ✅ Phase 1   |
-| | 19. Fatigue · 20. Seismic · 22. Durability | 🔜 Phases 3–4   |
+| **B. Member Design** | 23. Special Members | 🔜 Phase 4 |
+| **C. Connection Design** | 6. Bolted Connections (bearing + HSFG, prying, bolt groups) · 7. Welded Connections (fillet/butt, combined stresses, eccentric groups) | ✅ Phase 1 |
+| **D. Component & System Design** | 8. Plate Elements · 9. Built-Up · 10. Base Plates · 11. Gusset Plates · 12. Beam-to-Column · 13. Stiffeners · 14. Plate Girders · 15. Splices · 16. Purlins · 17. Trusses · 18. Crane Girders | 🔜 Phases 2–4 |
+| **E. Specialized & Reporting** | 21. Serviceability (deflection) · 24. Design Report (clause-wise, PDF/DOCX) | ✅ Phase 1 |
+| **E. Specialized & Reporting** | 19. Fatigue · 20. Seismic · 22. Durability | 🔜 Phases 3–4 |
 
 Modules marked `P2–P4` in the sidebar show their PRD roadmap status (honest Phase roadmap per PRD §7) and reuse the
 shared engine, classification and reporting infrastructure when implemented.
