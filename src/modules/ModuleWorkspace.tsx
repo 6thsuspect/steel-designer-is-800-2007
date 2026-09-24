@@ -220,7 +220,6 @@ function SectionPicker({ cs }: { cs: DesignCase }) {
 }
 
 function catalogList(current: string) {
-  const { SECTION_DB } = require('../engine/sections') as typeof import('../engine/sections');
   const seen = new Set<string>();
   const opts = SECTION_DB.map((e) => ({ value: e.name, label: e.name + (e.approximate ? ' ≈' : '') }));
   opts.unshift({ value: current, label: current });

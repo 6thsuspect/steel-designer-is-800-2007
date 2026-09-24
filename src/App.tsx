@@ -18,6 +18,7 @@ import {
 } from './state/store';
 import { ModuleWorkspace, PlannedModule } from './modules/ModuleWorkspace';
 import { DesignBasisModule, ProjectReportModule } from './modules/ProjectModules';
+import { Card } from './components/ui';
 
 function useStore(): ProjectState {
   const [state, set] = React.useState(getState());
@@ -48,12 +49,15 @@ export default function App() {
 
   const openModule = (moduleKey: ModuleKey) => {
     setActiveModule(moduleKey);
+    const mod = MODULES.find((m) => m.key === moduleKey)!;
     const existing = s.cases.find((c) => c.module === moduleKey);
-    if (existing) {
-      setState((st) => ({ ...st, selectedId: existing.id, activeTab: 'input' }));
-    } else if (moduleKey !== 'design-basis' && moduleKey !== 'report') {
-      const cs = defaultCase(moduleKey, s.cases.filter((c) => c.module === moduleKey).length + 1);
-      setState((st) => ({ ...st, cases: [...st.cases, cs], selectedId: cs.id, activeTab: 'input' }));
+    if (mod.implemented && moduleKey !== 'design-basis' && moduleKey !== 'report') {
+      if (existing) {
+        setState((st) => ({ ...st, selectedId: existing.id, activeTab: 'input' }));
+      } else {
+        const cs = defaultCase(moduleKey, s.cases.filter((c) => c.module === moduleKey).length + 1);
+        setState((st) => ({ ...st, cases: [...st.cases, cs], selectedId: cs.id, activeTab: 'input' }));
+      }
     } else {
       setState((st) => ({ ...st, selectedId: null, activeTab: 'input' }));
     }
@@ -178,18 +182,61 @@ export default function App() {
 
         {/* Main */}
         <main className="flex-1 overflow-y-auto p-5 print:overflow-visible print:p-0">
-          {activeModule === 'design-basis' ? (
-            <DesignBasisModule />
-          ) : activeModule === 'report' ? (
-            <ProjectReportModule />
-          ) : activeCase && activeCase.module === activeModule ? (
-            <ModuleWorkspace key={activeCase.id} cs={activeCase} />
-          ) : (
-            <PlannedModule moduleKey={activeModule} />
-          )}
+          <ModuleBoundary key={activeModule}>
+            {activeModule === 'design-basis' ? (
+              <DesignBasisModule />
+            ) : activeModule === 'report' ? (
+              <ProjectReportModule />
+            ) : !MODULES.find((m) => m.key === activeModule)?.implemented ? (
+              <PlannedModule moduleKey={activeModule} />
+            ) : activeCase && activeCase.module === activeModule ? (
+              <ModuleWorkspace key={activeCase.id} cs={activeCase} />
+            ) : (
+              <EmptyModule onAdd={() => newCase(activeModule)} />
+            )}
+          </ModuleBoundary>
         </main>
       </div>
     </div>
+  );
+}
+
+/** Keeps a single bad screen from unmounting the whole app (blank-page guard). */
+class ModuleBoundary extends React.Component<{ children: React.ReactNode }, { error: Error | null }> {
+  constructor(props: { children: React.ReactNode }) {
+    super(props);
+    this.state = { error: null };
+  }
+  static getDerivedStateFromError(error: Error) {
+    return { error };
+  }
+  componentDidCatch(error: Error) {
+    console.error('Module render error:', error);
+  }
+  componentDidUpdate(prevProps: { children: React.ReactNode }) {
+    if (prevProps.children !== this.props.children && this.state.error) this.setState({ error: null });
+  }
+  render() {
+    if (this.state.error) {
+      return (
+        <div className="bg-white rounded-xl border border-fail p-6 max-w-2xl">
+          <h2 className="text-sm font-bold text-fail">This module failed to render</h2>
+          <p className="text-[12px] text-steel-600 mt-2 font-mono">{String(this.state.error?.message ?? this.state.error)}</p>
+          <p className="text-[11px] text-steel-500 mt-2">Select another module or report this message. Your data is safe.</p>
+        </div>
+      );
+    }
+    return this.props.children;
+  }
+}
+
+function EmptyModule({ onAdd }: { onAdd: () => void }) {
+  return (
+    <Card title="No design case yet" subtitle="Create one to start this module">
+      <button onClick={onAdd} className="px-3 py-1.5 text-xs font-medium rounded-lg bg-steel-700 text-white hover:bg-steel-800">
+        + Add case
+      </button>
+    </Card>
   );
 }
 
