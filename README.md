@@ -15,7 +15,7 @@ sections (welded I, double angles, RHS/SHS/CHS).
 | Grp | Modules | Status |
 |-----|--|--------|
 | **A. Project & Design Setup** | 1. Design Basis & General (project data, IS 875 load combos, Table 1 material library, partial safety factors, section classification) | ✅ Phase 1 |
-| **B. Member Design** | 2. Tension<br>3. Compression (incl. lacing & battening)<br>4. Flexure<br>5. Combined Axial + Bending | ✅ Phase 1–2 |
+| **B. Member Design** | 2. Tension<br>3. Compression (incl. lacing & battening)<br>4. Flexure<br>5. Combined Axial + Bending |  ✅ Phase 1–2  |
 | **B. Member Design** | 23. Special Members | 🔜 Phase 4 |
 | **C. Connection Design** | 6. Bolted Connections (bearing + HSFG, prying, bolt groups)<br>7. Welded Connections (fillet/butt, combined stresses, eccentric groups) | ✅ Phase 1 |
 | **D. Component & System Design** | 8. Plate Elements<br>9. Built-Up<br>10. Base Plates<br>11. Gusset Plates<br>12. Beam-to-Column<br>13. Stiffeners<br>14. Plate Girders<br>15. Splices<br>16. Purlins<br>17. Trusses<br>18. Crane Girders | 🔜 Phases 2–4 |
